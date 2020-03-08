@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="INFO" name="Renaissance">
+
+    <Appenders>
+        <File name="HotelLog" filename=".\src\main\resources\Logger.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="DaoLayer" level="info" additivity="true">
+            <AppenderRef ref="HotelLog"/>
+        </Logger>
+        <Logger name="ServiceLayer" level="info" additivity="true">
+            <AppenderRef ref="HotelLog"/>
+        </Logger>
+        <Logger name="Command" level="info" additivity="true">
+            <AppenderRef ref="HotelLog"/>
+        </Logger>
+
+        <Root level="debug">
+            <AppenderRef ref="HotelLog"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
